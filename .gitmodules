@@ -1,3 +1,6 @@
 [submodule "laradock"]
 	path = laradock
 	url = https://github.com/laradock/laradock.git
+[submodule "Workspace/laradock"]
+	path = Workspace/laradock
+	url = https://github.com/laradock/laradock.git

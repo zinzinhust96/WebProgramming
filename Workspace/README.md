@@ -1,12 +1,12 @@
 # Library Manager Guide
 ## Install project guide
 
-Step 1: `git clone --rescursive https://ttluong1993@bitbucket.org/t3min4l/isd.ict.20171-07.git`<br>
+Step 1: `git clone --recurse-submodules https://github.com/zinzinhust96/WebProgramming.git`<br>
 	if use 'git pull', run 'git submodule init && git submodule update`<br>
 
 Step 3: `cd <project-path>/application`<br>
 
-Step 3: `cp .env.example .env` then edit `APP_NAME, APP_URL, DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD` config<br>
+Step 3: `cp .env.example .env` then edit `DB_HOST` to `mysql` config<br>
 
 Step 4: `cd <project-path>/laradock`<br>
 	``cp env-example .env` then change `APPLICATION=../` to `APPLICATION=../application`<br>
