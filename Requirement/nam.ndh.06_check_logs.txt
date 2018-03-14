@@ -1,0 +1,2 @@
+Doan Ngoc Giang Nam check chéo:
+- Phần @return của nhiều hàm (ví dụ hàm generateCopyNumber của use case add copy) cần ghi rõ ra là return cái gì chứ đừng ghi chung chung là return a string

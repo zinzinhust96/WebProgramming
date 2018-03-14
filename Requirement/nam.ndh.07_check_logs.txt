@@ -1,0 +1,3 @@
+Đoàn Ngọc Giang Nam check chéo:
+- bỏ attribute num_copies ở BOOK_INFO đi, có thể dùng sql để đếm mà
+- dùng data type của astah hỗ trợ đi, xem trong này nó hướng dẫn https://www.youtube.com/watch?v=CDFXjRisK_8

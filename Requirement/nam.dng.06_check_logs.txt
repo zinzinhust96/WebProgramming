@@ -1,0 +1,4 @@
+﻿Lương:
+- chưa có javadoc và pseudo code cho các method của boundary class (BookBorrowRegistrationForm, LoginForm).
+Nam Nguyen: 
+- Các phần ok
