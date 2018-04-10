@@ -32,6 +32,10 @@ class PermissionForAdminSeeder extends Seeder
 
             'return-book.create',
             'return-book.store',
+
+            'issue-borrowing-card.create',
+            'issue-borrowing-card.index',
+            'issue-borrowing-card.store',
         ])->get()->toArray();
 
         $superAdminRole->attachPermissions($PermissionsForSuperAdmin);

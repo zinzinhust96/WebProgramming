@@ -4,6 +4,7 @@ namespace App;
 
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class BorrowCard extends Model
 {
@@ -44,5 +45,24 @@ class BorrowCard extends Model
     public function checkExpirationDate()
     {
         return new DateTime($this->getAttribute('expired_date')) > new DateTime();
+    }
+
+    public function createNewBorrowCard($userID){
+        $this->setAttribute('card_number', self::generateBorrowCardNumber())
+            ->setAttribute('user_id', $userID)
+            ->setAttribute('activation_code', self::generateRandomActivationCode())
+            ->setAttribute('expired_date', Carbon::now()->addYears(2));
+        
+        $this->save();
+    }
+
+    private function generateBorrowCardNumber() {
+        $noOfBorrowCard = $this->count();
+        $sequenceNumber = $noOfBorrowCard + 1;
+        return str_pad($sequenceNumber , 4, "0", STR_PAD_LEFT );
+    }
+
+    private function generateRandomActivationCode($length = 10) {
+        return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
     }
 }

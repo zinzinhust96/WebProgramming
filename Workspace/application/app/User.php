@@ -67,6 +67,11 @@ class User extends Authenticatable
         return $this->where('name', $username)->first();
     }
 
+    public function getUserByUserID($userID)
+    {
+        return $this->where('id', $userID)->first();
+    }
+
     /**
      * Get active card number
      * @return mixed|null

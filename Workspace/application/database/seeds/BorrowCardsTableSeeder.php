@@ -18,6 +18,7 @@ class BorrowCardsTableSeeder extends Seeder
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 'expired_date' => new DateTime('2019-01-01'),
+                'activation_code' => 'tO7wmZKdY3',
                 'user_id' => 3
             ],
 
@@ -26,6 +27,7 @@ class BorrowCardsTableSeeder extends Seeder
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 'expired_date' => new DateTime('2017-01-01'),
+                'activation_code' => '1oJvoNlt9l',
                 'user_id' => 3
             ],
 
@@ -34,6 +36,7 @@ class BorrowCardsTableSeeder extends Seeder
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 'expired_date' => new DateTime('2018-01-01'),
+                'activation_code' => 'TRXRxtU1gV',
                 'user_id' => 2
             ],
 

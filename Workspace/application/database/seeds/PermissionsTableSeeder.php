@@ -90,6 +90,20 @@ class PermissionsTableSeeder extends Seeder
                 'display_name' => '',
             ],
 
+            [
+                'name' => 'issue-borrowing-card.create',
+                'display_name' => '',
+            ],
+
+            [
+                'name' => 'issue-borrowing-card.index',
+                'display_name' => '',
+            ],
+
+            [
+                'name' => 'issue-borrowing-card.store',
+                'display_name' => '',
+            ],
         ]);
     }
 }
