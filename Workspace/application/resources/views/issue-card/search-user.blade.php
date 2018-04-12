@@ -10,7 +10,7 @@
                 <div class="alert alert-danger">{{ Session::get('fail') }}</div>
             @endif
                 <h1>Search user</h1>
-                {!! Form::open(array('route' => 'issue-borrowing-card.index', 'data-parsley-validate' => '')) !!}
+                {!! Form::open(array('route' => 'issue-borrowing-card.searchUser', 'data-parsley-validate' => '')) !!}
 
                 @if(isset($userNotFound) && $userNotFound == true)
                     <span class="col-sm-12 alert alert-danger">User did not exist</span>

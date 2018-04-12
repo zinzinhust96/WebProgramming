@@ -19,6 +19,8 @@ class BorrowerPermissionsSeeder extends Seeder
             'book.show',
             'book.borrow.register.create',
             'book.borrow.register.store',
+            'activate-card.showForm',
+            'activate-card.handleForm',
         ])->get()->toArray();
 
         $borrowerRole->attachPermissions($PermissionsForSuperAdmin);

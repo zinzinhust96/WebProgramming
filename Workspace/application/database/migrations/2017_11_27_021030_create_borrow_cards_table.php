@@ -18,6 +18,7 @@ class CreateBorrowCardsTable extends Migration
             $table->string('card_number')->unique();
             $table->integer('user_id');
             $table->string('activation_code')->unique();
+            $table->boolean('is_activated');
             $table->dateTime('expired_date');
             $table->timestamps();
         });

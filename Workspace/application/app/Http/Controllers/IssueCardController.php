@@ -7,34 +7,24 @@ use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 
-class BorrowCardController extends Controller
+class IssueCardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
+    public function searchUser(Request $request)
     {
         $user = (new User())->getUserByUsername($request->input('name'));
         if (is_null($user)) {
-            return view('borrow-card.search-user')
+            return view('issue-card.search-user')
                 ->with('userNotFound', true);
         }
         $borrowCard = $user->getActiveBorrowCard();        
-        return view('borrow-card.detail')
+        return view('issue-card.detail')
                 ->with('user', $user)
                 ->with('borrowCard', $borrowCard);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('borrow-card.search-user');
+        return view('issue-card.search-user');
     }
 
     /**
@@ -59,7 +49,7 @@ class BorrowCardController extends Controller
             }
         }
         Session::flash('success', 'The borrow card was successfully created!');
-        return view('borrow-card.detail')
+        return view('issue-card.detail')
             ->with('user', $user)
             ->with('borrowCard', $borrowCard);
     }

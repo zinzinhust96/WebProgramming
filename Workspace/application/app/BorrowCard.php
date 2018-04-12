@@ -51,7 +51,8 @@ class BorrowCard extends Model
         $this->setAttribute('card_number', self::generateBorrowCardNumber())
             ->setAttribute('user_id', $userID)
             ->setAttribute('activation_code', self::generateRandomActivationCode())
-            ->setAttribute('expired_date', Carbon::now()->addYears(2));
+            ->setAttribute('expired_date', Carbon::now()->addYears(2))
+            ->setAttribute('is_activated', false);
         
         $this->save();
     }

@@ -37,6 +37,11 @@
                     <li class="{{ Request::is('return-book/create') ? "active" : "" }}">
                         <a href="{{ route('return-book.create') }}">Return Books</a></li>
                 @endrole
+                @role('borrower')
+                    <li class="{{ Request::is('activate-card') ? "active" : "" }}">
+                        <a href="{{ route('activate-card.showForm') }}">Activate card</a>
+                    </li>
+                @endrole
                 <li class="{{ Request::is('about') ? "active" : "" }}"><a href="{{ route('about') }}">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
