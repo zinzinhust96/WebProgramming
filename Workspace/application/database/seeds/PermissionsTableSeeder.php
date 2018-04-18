@@ -91,17 +91,17 @@ class PermissionsTableSeeder extends Seeder
             ],
 
             [
-                'name' => 'issue-borrowing-card.create',
+                'name' => 'issue-card.create',
                 'display_name' => '',
             ],
 
             [
-                'name' => 'issue-borrowing-card.searchUser',
+                'name' => 'issue-card.searchUser',
                 'display_name' => '',
             ],
 
             [
-                'name' => 'issue-borrowing-card.store',
+                'name' => 'issue-card.store',
                 'display_name' => '',
             ],
 
