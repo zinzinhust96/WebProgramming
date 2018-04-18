@@ -14,7 +14,7 @@
 
                 @if(!isset($borrowCard))
                   <h1>Issue card validation form</h1>
-                  {!! Form::open(array('route' => 'issue-borrowing-card.store', 'data-parsley-validate' => '')) !!}
+                  {!! Form::open(array('route' => 'borrow-card.store', 'data-parsley-validate' => '')) !!}
                   {{ Form::hidden('user_id', $user->id) }}
                   @if($user->is_student)
                     <div class="form-group required">
@@ -44,7 +44,7 @@
 
                 <div class="form-group required">
                 <h1>Click reset to clear all form</h1>
-                {!! Html::linkRoute('issue-borrowing-card.create', 'Reset', null, array('class' => 'btn btn-danger')) !!}
+                {!! Html::linkRoute('borrow-card.create', 'Reset', null, array('class' => 'btn btn-danger')) !!}
                 </div>
             </div>
             <div class="col-md-6">

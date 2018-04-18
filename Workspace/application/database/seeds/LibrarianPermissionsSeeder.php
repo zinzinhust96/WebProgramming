@@ -33,9 +33,9 @@ class LibrarianPermissionsSeeder extends Seeder
             'return-book.create',
             'return-book.store',
 
-            'issue-borrowing-card.create',
-            'issue-borrowing-card.searchUser',
-            'issue-borrowing-card.store',
+            'borrow-card.create',
+            'borrow-card.searchUser',
+            'borrow-card.store',
         ])->get()->toArray();
 
         $borrowerRole->attachPermissions($PermissionsForSuperAdmin);

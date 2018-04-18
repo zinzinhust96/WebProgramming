@@ -52,10 +52,10 @@ Route::middleware(['auth', 'decentralize'])->group(function () {
     Route::get('/return-book/create', 'ReturnBookController@create')->name('return-book.create');
     Route::post('/return-book/store', 'ReturnBookController@store')->name('return-book.store');
 
-    //Issue borrowing card
-    Route::get('/issue-borrowing-card', 'IssueCardController@create')->name('issue-borrowing-card.create');
-    Route::post('/issue-borrowing-card', 'IssueCardController@searchUser')->name('issue-borrowing-card.searchUser');
-    Route::post('/issue-borrowing-card/store', 'IssueCardController@store')->name('issue-borrowing-card.store');
+    //Manage borrowing card
+    Route::get('/borrow-card/create', 'BorrowCardController@create')->name('borrow-card.create');
+    Route::post('/borrow-card', 'BorrowCardController@searchUser')->name('borrow-card.searchUser');
+    Route::post('/borrow-card/store', 'BorrowCardController@store')->name('borrow-card.store');
 
     //Activate borrowing card
     Route::get('/activate-card', 'ActivateCardController@showForm')->name('activate-card.showForm');

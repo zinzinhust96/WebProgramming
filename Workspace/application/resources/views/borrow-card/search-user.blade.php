@@ -10,7 +10,7 @@
                 <div class="alert alert-danger">{{ Session::get('fail') }}</div>
             @endif
                 <h1>Search user</h1>
-                {!! Form::open(array('route' => 'issue-borrowing-card.searchUser', 'data-parsley-validate' => '')) !!}
+                {!! Form::open(array('route' => 'borrow-card.searchUser', 'data-parsley-validate' => '')) !!}
 
                 @if(isset($userNotFound) && $userNotFound == true)
                     <span class="col-sm-12 alert alert-danger">User did not exist</span>
@@ -27,7 +27,7 @@
 
                 <div class="form-group required">
                 <h1>Click reset to clear all form</h1>
-                {!! Html::linkRoute('issue-borrowing-card.create', 'Reset', null, array('class' => 'btn btn-danger')) !!}
+                {!! Html::linkRoute('borrow-card.create', 'Reset', null, array('class' => 'btn btn-danger')) !!}
                 </div>
             </div>
             <div class="col-md-6">
