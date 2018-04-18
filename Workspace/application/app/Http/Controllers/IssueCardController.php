@@ -7,24 +7,24 @@ use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 
-class BorrowCardController extends Controller
+class IssueCardController extends Controller
 {
     public function searchUser(Request $request)
     {
         $user = (new User())->getUserByUsername($request->input('name'));
         if (is_null($user)) {
-            return view('borrow-card.search-user')
+            return view('issue-card.search-user')
                 ->with('userNotFound', true);
         }
         $borrowCard = $user->getActiveBorrowCard();        
-        return view('borrow-card.detail')
+        return view('issue-card.detail')
                 ->with('user', $user)
                 ->with('borrowCard', $borrowCard);
     }
 
     public function create()
     {
-        return view('borrow-card.search-user');
+        return view('issue-card.search-user');
     }
 
     /**
@@ -45,11 +45,11 @@ class BorrowCardController extends Controller
                 $borrowCard->createNewBorrowCard($request->user_id);        
             } else {
                 Session::flash('fail', 'The student_id attribute is not valid!');
-                return redirect('borrow-card/create');
+                return redirect()->back();
             }
         }
         Session::flash('success', 'The borrow card was successfully created!');
-        return view('borrow-card.detail')
+        return view('issue-card.detail')
             ->with('user', $user)
             ->with('borrowCard', $borrowCard);
     }
