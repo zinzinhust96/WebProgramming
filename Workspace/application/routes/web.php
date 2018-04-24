@@ -60,4 +60,8 @@ Route::middleware(['auth', 'decentralize'])->group(function () {
     //Activate borrowing card
     Route::get('/activate-card', 'ActivateCardController@showForm')->name('activate-card.showForm');
     Route::post('/activate-card', 'ActivateCardController@handleForm')->name('activate-card.handleForm');
+
+    //Borrow card
+    Route::resource('borrow-card', 'BorrowCardController');
+    Route::post('/borrow-card', 'BorrowCardController@search')->name('borrow-card.search');
 });

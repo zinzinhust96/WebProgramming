@@ -24,7 +24,7 @@
                     <li class="{{ Request::is('user') ? "active" : "" }}"><a href="#">Users</a></li>
                 @endrole
                 @role(['admin', 'librarian'])
-                    <li class="{{ Request::is('issue-card') ? "active" : "" }}"><a href="{{ route('issue-card.create') }}">Issue Card</a></li>
+                    <li class="{{ Request::is('borrow-card') ? "active" : "" }}"><a href="{{ route('borrow-card.index') }}">Borrow Card</a></li>
                 @endrole
                 @role(['admin', 'librarian'])
                     <li class="{{ Request::is('book') ? "active" : "" }}"><a href="{{ route('book.index') }}">Books</a></li>

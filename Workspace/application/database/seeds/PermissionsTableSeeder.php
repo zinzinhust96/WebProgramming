@@ -114,6 +114,22 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'activate-card.handleForm',
                 'display_name' => '',
             ],
+            [
+                'name' => 'borrow-card.index',
+                'display_name' => '',
+            ],
+            [
+                'name' => 'borrow-card.search',
+                'display_name' => '',
+            ],
+            [
+                'name' => 'borrow-card.show',
+                'display_name' => '',
+            ],
+            [
+                'name' => 'borrow-card.update',
+                'display_name' => '',
+            ]
         ]);
     }
 }
