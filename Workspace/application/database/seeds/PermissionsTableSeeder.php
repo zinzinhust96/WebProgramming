@@ -90,6 +90,7 @@ class PermissionsTableSeeder extends Seeder
                 'display_name' => '',
             ],
 
+            // Issue borrowing card
             [
                 'name' => 'issue-card.create',
                 'display_name' => '',
@@ -104,7 +105,12 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'issue-card.store',
                 'display_name' => '',
             ],
+            [
+                'name' => 'issue-card.user-detail',
+                'display_name' => '',
+            ],
 
+            // Activate borrowing card
             [
                 'name' => 'activate-card.showForm',
                 'display_name' => '',
@@ -114,6 +120,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'activate-card.handleForm',
                 'display_name' => '',
             ],
+
+            // Manage borrowing card
             [
                 'name' => 'borrow-card.index',
                 'display_name' => '',

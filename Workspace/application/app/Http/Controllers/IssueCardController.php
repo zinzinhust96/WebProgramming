@@ -16,7 +16,12 @@ class IssueCardController extends Controller
             return view('issue-card.search-user')
                 ->with('userNotFound', true);
         }
-        $borrowCard = $user->getActiveBorrowCard();        
+        return redirect()->route('issue-card.user-detail', $user->id);
+    }
+
+    public function userDetail($userId){
+        $user = (new User())->getUserByUserID($userId);
+        $borrowCard = $user->getActiveBorrowCard();            
         return view('issue-card.detail')
                 ->with('user', $user)
                 ->with('borrowCard', $borrowCard);
@@ -44,8 +49,8 @@ class IssueCardController extends Controller
             if($user->is_student && $request->student_id == $user->student_id){
                 $borrowCard->createNewBorrowCard($request->user_id);        
             } else {
-                Session::flash('fail', 'The student_id attribute is not valid!');
-                return redirect()->back();
+                Session::flash('fail', 'You have given a wrong student ID!');
+                return redirect()->route('issue-card.user-detail', $user->id);
             }
         }
         Session::flash('success', 'The borrow card was successfully created!');

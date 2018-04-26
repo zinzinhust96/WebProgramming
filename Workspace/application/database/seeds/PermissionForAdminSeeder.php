@@ -36,6 +36,7 @@ class PermissionForAdminSeeder extends Seeder
             'issue-card.create',
             'issue-card.searchUser',
             'issue-card.store',
+            'issue-card.user-detail',
 
             'borrow-card.index',
             'borrow-card.search',

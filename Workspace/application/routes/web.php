@@ -55,6 +55,7 @@ Route::middleware(['auth', 'decentralize'])->group(function () {
     //Issue borrowing card
     Route::get('/issue-card', 'IssueCardController@create')->name('issue-card.create');
     Route::post('/issue-card', 'IssueCardController@searchUser')->name('issue-card.searchUser');
+    Route::get('/issue-card/{user_id}/user-detail', 'IssueCardController@userDetail')->name('issue-card.user-detail');
     Route::post('/issue-card/store', 'IssueCardController@store')->name('issue-card.store');
 
     //Activate borrowing card

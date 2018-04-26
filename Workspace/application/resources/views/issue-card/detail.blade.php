@@ -6,6 +6,9 @@
     <div class="container container-fluid">
         <div class="row">
             <div class="col-md-6">
+            @if (Session::has('fail'))
+                <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+            @endif
                 <h1>User detail</h1>
                 <p>Full name: {{ $user->full_name }}</p>
                 <p>Borrow card status: {{ isset($borrowCard) ? 'User had already had borrowing card' : 'User did not have borrowing card' }}</p>
@@ -33,14 +36,12 @@
                   {!! Form::close() !!}
 
                   <hr />
+                @else
+                    <h1>Issued card information</h1>
+                    <p>Card number: {{ $borrowCard->card_number }}</p>
+                    <p>Expired date: {{ date_format(date_create($borrowCard->expired_date), "F d, Y G:i") }}</p>
+                    <p>Activation code: {{ $borrowCard->activation_code }}</p>
                 @endif
-
-								@if(isset($borrowCard))
-									<h1>Issued card information</h1>
-									<p>Card number: {{ $borrowCard->card_number }}</p>
-									<p>Expired date: {{ date_format(date_create($borrowCard->expired_date), "F d, Y G:i") }}</p>
-									<p>Activation code:: {{ $borrowCard->activation_code }}</p>
-								@endif
 
                 <div class="form-group required">
                 <h1>Click reset to clear all form</h1>
