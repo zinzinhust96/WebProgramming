@@ -7,7 +7,7 @@ $(function () {
         }
     });
 
-    $('body').on('change', 'input.book-selector', function () {
+    $('body').on('change', '.book-list input.book-selector', function () {
         if ($(this).is(':checked')) {
             var clone = $(this).parent().parent().clone();
             $('#borrow-modal').find('.modal-body table tbody').append(clone);
