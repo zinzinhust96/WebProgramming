@@ -64,4 +64,5 @@ Route::middleware(['auth', 'decentralize'])->group(function () {
     //Borrow card
     Route::resource('borrow-card', 'BorrowCardController');
     Route::post('/borrow-card', 'BorrowCardController@search')->name('borrow-card.search');
+    Route::get('/borrow-card/{card_id}/deactivate', 'BorrowCardController@deactivate')->name('borrow-card.deactivate');
 });

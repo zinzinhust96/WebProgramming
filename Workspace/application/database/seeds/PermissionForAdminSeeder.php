@@ -40,7 +40,8 @@ class PermissionForAdminSeeder extends Seeder
             'borrow-card.index',
             'borrow-card.search',
             'borrow-card.show',
-            'borrow-card.update'
+            'borrow-card.update',
+            'borrow-card.deactivate'
         ])->get()->toArray();
 
         $superAdminRole->attachPermissions($PermissionsForSuperAdmin);

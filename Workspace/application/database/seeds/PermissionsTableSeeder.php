@@ -129,6 +129,10 @@ class PermissionsTableSeeder extends Seeder
             [
                 'name' => 'borrow-card.update',
                 'display_name' => '',
+            ],
+            [
+                'name' => 'borrow-card.deactivate',
+                'display_name' => '',
             ]
         ]);
     }

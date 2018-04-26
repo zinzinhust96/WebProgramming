@@ -26,6 +26,14 @@ class BorrowCardController extends Controller
         return view('borrow-card.index', ['cards' => $cards]);
     }
 
+    public function deactivate($id) {
+        $borrowCard = (new BorrowCard())->where('id', $id)->first();
+        $borrowCard->is_activated = 0;
+        $borrowCard->save();
+        Session::flash('success', 'The borrow card number ' . $borrowCard->card_number . ' was successfully deactivated!');
+        return redirect('borrow-card');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -85,8 +93,8 @@ class BorrowCardController extends Controller
         $borrowCard = (new BorrowCard())->where('id', $id)->first();
         $borrowCard->expired_date = $request->expired_date;
         $borrowCard->save();
-        Session::flash('success', 'The borrow card was successfully updated!');
-        return view('borrow-card.show', ['card' => $borrowCard]);
+        Session::flash('success', 'The borrow card number ' . $borrowCard->card_number . ' was successfully updated!');
+        return redirect('borrow-card');
     }
 
     /**
