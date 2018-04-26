@@ -66,10 +66,10 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-3">
-                                    <label for="password-confirmation" class="form-label">Borrowed Date: </label>
+                                    <label for="borrowed-date" class="form-label">Borrowed Date: </label>
                                 </div>
                                 <div class="col-md-5">
-                                    <input class="form-control" name="user-name" id="user-name" value="{{ (new DateTime())->format('d/m/Y H:i:s') }}" disabled>
+                                    <input class="form-control" name="borrowed-date" id="borrowed-date" value="{{ (new DateTime())->format('d/m/Y H:i:s') }}" disabled>
                                 </div>
                             </div>
                             <input type="hidden" name="book-ids">

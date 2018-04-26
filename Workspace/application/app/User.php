@@ -84,4 +84,20 @@ class User extends Authenticatable
 
         return $this->getActiveBorrowCard()->getAttribute('card_number');
     }
+
+    public function borrowRecords()
+    {
+        return $this->hasMany('App\BorrowRecord');
+    }
+
+    public function hasOverDueBorrow()
+    {
+        foreach ($this->getAttribute('borrowRecords') as $record) {
+            if ($record->isOverDue()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

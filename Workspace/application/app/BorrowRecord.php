@@ -2,6 +2,7 @@
 
 namespace App;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 
 class BorrowRecord extends Model
@@ -60,5 +61,15 @@ class BorrowRecord extends Model
     {
         $this->setAttribute('status', $status);
         $this->save();
+    }
+
+    public function isOverDue()
+    {
+        if (is_null($this->getAttribute('borrowInformation'))) {
+            return false;
+        }
+
+        return is_null($this->getAttribute('borrowInformation')->getAttribute('returned_date'))
+            && ($this->getAttribute('borrowInformation')->getAttribute('expired_date') > new DateTime());
     }
 }

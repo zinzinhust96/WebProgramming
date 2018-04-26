@@ -78,6 +78,9 @@ class BookBorrowRegistrationController extends Controller
             }
         }
 
+        if ($user->hasOverDueBorrow()) {
+            $validator->errors()->add('user', 'You have some over due lent books!');
+        }
 
         $bookIDs = json_decode($request->input('book-ids'));
 
