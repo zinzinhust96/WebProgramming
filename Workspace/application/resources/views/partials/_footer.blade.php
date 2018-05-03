@@ -1,2 +1,2 @@
 <hr>
-<p class="text-center">Copyright ISD.ICT.20171-07 - All Rights Reserved</p>
+<p class="text-center">Copyright WebProgramming 20172 - Group2 - All Rights Reserved</p>
