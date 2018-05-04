@@ -66,4 +66,9 @@ class BorrowCard extends Model
     private function generateRandomActivationCode($length = 10) {
         return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
     }
+
+    public function isActivated()
+    {
+        return $this->getAttribute('is_activated');
+    }
 }

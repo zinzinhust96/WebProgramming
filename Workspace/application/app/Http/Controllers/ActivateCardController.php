@@ -18,7 +18,7 @@ class ActivateCardController extends Controller {
     }
     return view('activate-card.form')
       ->with('borrowCardExist', true)
-      ->with('isActivated', $borrowCard->is_activated);
+      ->with('isActivated', $borrowCard->isActivated());
   }
 
   public function handleForm(Request $request)

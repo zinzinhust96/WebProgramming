@@ -76,6 +76,9 @@ class BookBorrowRegistrationController extends Controller
             if(!$borrowCard->checkExpirationDate()) {
                 $validator->errors()->add('borrow-card', 'Your borrow card is expired!');
             }
+            if(!$borrowCard->isActivated()) {
+                $validator->errors()->add('borrow-card', 'Your borrow card is not activated!');
+            }
         }
 
         if ($user->hasOverDueBorrow()) {

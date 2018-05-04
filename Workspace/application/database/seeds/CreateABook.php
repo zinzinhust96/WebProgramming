@@ -34,7 +34,7 @@ class CreateABook extends Seeder
         ]);
         DB::table('books')->insert([
             'book_number' => 'TE0002',
-            'title' => 'Data stucture and algorithm',
+            'title' => 'Data structure and algorithm',
             'publisher' => 'HUST',
             'authors' => 'Pham Quang Dung',
             'category' => 'Textbook',
@@ -84,7 +84,7 @@ class CreateABook extends Seeder
         ]);
         DB::table('books')->insert([
             'book_number' => 'HI0003',
-            'title' => 'Rubicon: The Last Years of the Roman Republic',
+            'title' => 'Spiderman: Homecoming',
             'publisher' => 'Anchor',
             'authors' => 'Tom Holland',
             'category' => 'History',
