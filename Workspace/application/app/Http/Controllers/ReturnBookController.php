@@ -142,7 +142,7 @@ class ReturnBookController extends Controller
 
         $borrowRecord->getAttribute('bookCopy')->updateBookCopyStatus('available', $request->input('status_after'));
 
-        Session::flash('success', 'Lent book successfully!');
+        Session::flash('success', 'Return book successfully!');
         return redirect()->back();
     }
 
